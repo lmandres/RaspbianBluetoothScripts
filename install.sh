@@ -1,2 +1,2 @@
 apt update && apt -y upgrade
-apt -y install pulseaudio pulseaudio-module-bluetooth ofono ofono-phonesim
+apt -y install bluetooth pulseaudio pulseaudio-module-bluetooth ofono ofono-phonesim
