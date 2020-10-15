@@ -1,4 +1,4 @@
-#Install
+# Install
 
 Run the following:
 
@@ -6,7 +6,7 @@ Run the following:
 sudo sh install.sh
 ```
 
-#Setup a Bluetooth device
+# Setup a Bluetooth device
 
 Run the following
 
