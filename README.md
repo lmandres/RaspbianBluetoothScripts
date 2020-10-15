@@ -11,5 +11,5 @@ sudo sh install.sh
 Run the following
 
 ```bash
-sh setup_bluetooth {MAC Address}
+sh setup_bluetooth.sh {MAC Address}
 ```
