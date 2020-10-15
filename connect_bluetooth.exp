@@ -1,0 +1,26 @@
+set prompt "#"
+set address [lindex $argv 0]
+
+spawn bluetoothctl
+expect -re $prompt
+send "agent on\r"
+expect -re $prompt
+send "default-agent\r"
+expect -re $prompt
+send "remove $address\r"
+expect -re "(Device has been removed|not available)"
+expect -re $prompt
+send "scan on\r"
+expect -re $address
+expect -re $prompt
+send "pair $address\r"
+expect -re "Pairing successful"
+expect -re $prompt
+send "trust $address\r"
+expect -re "trust succeeded"
+expect -re $prompt
+send "connect $address\r"
+expect -re "Connection successful"
+expect -re $prompt
+send "quit\r"
+expect eof
