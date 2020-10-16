@@ -9,9 +9,6 @@ sleep 1
 pulseaudio --start -vvv
 sleep 1
 
-pacmd load-module module-bluetooth-discovery headset=ofono
-pacmd load-module module-bluetooth-policy
-
 expect connect_bluetooth.exp $macaddr
 
 sleep 1
