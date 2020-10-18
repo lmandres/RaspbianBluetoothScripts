@@ -3,7 +3,7 @@ macaddr=$1
 while [ 1 ]; do
     testvar=$(pacmd set-card-profile bluez_card.$macaddr headset_head_unit)
     echo $testvar
-    if [ "$testvar" = "" ]; then
+    if [ -z "$testvar" ]; then
         break
     fi
     sleep 1

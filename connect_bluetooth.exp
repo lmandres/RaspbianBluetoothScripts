@@ -3,18 +3,19 @@ set address [lindex $argv 0]
 
 spawn bluetoothctl
 expect -re $prompt
-send "agent on\r"
+send "agent off\r"
+expect -re "Agent unregistered"
+expect -re $prompt
+send "agent NoInputNoOutput\r"
+expect -re "Agent registered"
 expect -re $prompt
 send "default-agent\r"
-expect -re $prompt
-send "remove $address\r"
-expect -re "(Device has been removed|not available)"
 expect -re $prompt
 send "scan on\r"
 expect -re $address
 expect -re $prompt
 send "pair $address\r"
-expect -re "Pairing successful"
+expect -re {(Pairing successful|AlreadyExists)}
 expect -re $prompt
 send "trust $address\r"
 expect -re "trust succeeded"
